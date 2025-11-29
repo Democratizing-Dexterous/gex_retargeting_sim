@@ -25,13 +25,15 @@ OPERATOR2MANO_LEFT = np.array(
 
 
 class RobotName(enum.Enum):
-    gx11 = enum.auto()
+    gx10 = enum.auto()
     ex12 = enum.auto()
 
 
 class RetargetingType(enum.Enum):
     vector = enum.auto()  # For teleoperation, no finger closing prior
-    position = enum.auto()  # For offline data processing, especially hand-object interaction data
+    position = (
+        enum.auto()
+    )  # For offline data processing, especially hand-object interaction data
     dexpilot = enum.auto()  # For teleoperation, with finger closing prior
 
 
@@ -41,7 +43,7 @@ class HandType(enum.Enum):
 
 
 ROBOT_NAME_MAP = {
-    RobotName.gx11: "gx11",
+    RobotName.gx10: "gx10",
     RobotName.ex12: "ex12",
 }
 ROBOT_NAME_MAP_INV = {v: k for k, v in ROBOT_NAME_MAP.items()}
@@ -78,7 +80,7 @@ OPERATOR2MANO = {
     HandType.left: OPERATOR2MANO_LEFT,
 }
 
-if __name__=="__main__":
+if __name__ == "__main__":
     # exchange the keys and value of ROBOT_NAMES
     ROBOT_NAME_MAP_INV = {v: k for k, v in ROBOT_NAME_MAP.items()}
     breakpoint()
