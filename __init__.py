@@ -1,1 +1,1 @@
-from retargeting.gex_retarget import GexRetarget
+from .retargeting.gex_retarget import GexRetarget
